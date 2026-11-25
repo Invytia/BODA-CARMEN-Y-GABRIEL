@@ -42,17 +42,17 @@ body::after{content:"";position:fixed;inset:0;z-index:20000;pointer-events:none;
 @media (prefers-reduced-motion:reduce){.anim-el{opacity:1;transform:none;transition:none}}
 
 /* ---------- tipografía ---------- */
-.eyebrow{font-family:var(--sans);font-weight:400;font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--ink);margin-bottom:22px}
+.eyebrow{font-family:var(--sans);font-weight:400;font-size:.78rem;letter-spacing:.36em;text-transform:uppercase;color:var(--ink);margin-bottom:14px}
 .eyebrow.sage{color:var(--sage)}
-h2.title{font-family:var(--serif);font-weight:300;font-size:clamp(1.15rem,5.2vw,1.9rem);letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin-bottom:6px;padding-left:.2em;max-width:100%;overflow-wrap:break-word;line-height:1.3}
-.script{font-family:var(--serif);font-style:italic;font-weight:300;color:var(--soft);font-size:1.25rem;line-height:1.7}
-p.body{font-size:1.08rem;line-height:1.85;color:var(--ink);font-weight:400}
-.sprig{display:block;width:90px;height:1px;background:var(--lav);margin:30px auto;opacity:.75;position:relative}
+h2.title{font-family:var(--serif);font-weight:300;font-size:clamp(1.65rem,7.2vw,2.5rem);letter-spacing:.16em;text-transform:uppercase;color:var(--ink);margin-bottom:4px;padding-left:.16em;max-width:100%;overflow-wrap:break-word;line-height:1.3}
+.script{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--soft);font-size:1.45rem;line-height:1.6}
+p.body{font-size:1.25rem;line-height:1.7;color:var(--ink);font-weight:400}
+.sprig{display:block;width:90px;height:1px;background:var(--lav);margin:20px auto 24px;opacity:.75;position:relative}
 .sprig::after{content:"";position:absolute;left:50%;top:-4px;width:9px;height:9px;border:1px solid var(--lav);background:var(--lav-p);transform:translateX(-50%) rotate(45deg)}
 .sprig::before{content:"";position:absolute;left:-14px;right:-14px;top:-1px;height:3px;border-top:1px solid var(--lav-p);border-bottom:1px solid var(--lav-p);opacity:.9}
 
 /* ---------- flores (tus PNG) ---------- */
-.sec{position:relative;max-width:620px;margin:0 auto;padding:90px 34px;text-align:center;overflow:hidden}
+.sec{position:relative;max-width:620px;margin:0 auto;padding:64px 22px;text-align:center;overflow:hidden}
 .flor{position:absolute;pointer-events:none;z-index:0;mix-blend-mode:multiply;user-select:none}
 .sec > *:not(.flor){position:relative;z-index:1}
 .flor.bl{left:-14%;bottom:-3%;width:62%}
@@ -60,12 +60,13 @@ p.body{font-size:1.08rem;line-height:1.85;color:var(--ink);font-weight:400}
 .flor.tl{left:-18%;top:-3%;width:46%;transform:scaleY(-1)}
 .flor.br{right:-18%;bottom:-3%;width:46%;transform:scaleX(-1)}
 /* flores secundarias: ocupan solo el margen de la sección, nunca el texto */
-.sec{padding-top:120px;padding-bottom:120px}
-.flor.sm{width:auto;height:170px;max-width:42%;opacity:1}
-.flor.bl.sm{left:-14%;bottom:-70px}
-.flor.tr.sm{right:-14%;top:-70px}
-.flor.tl.sm{left:-14%;top:-70px}
-.flor.br.sm{right:-14%;bottom:-70px}
+.sec{padding-top:52px;padding-bottom:52px}
+.sec:has(> .flor.sm){padding-top:96px;padding-bottom:96px}
+.flor.sm{width:auto;height:150px;max-width:42%;opacity:1}
+.flor.bl.sm{left:-14%;bottom:-62px}
+.flor.tr.sm{right:-14%;top:-62px}
+.flor.tl.sm{left:-14%;top:-62px}
+.flor.br.sm{right:-14%;bottom:-62px}
 .flor.tr.sm.historia{right:-22%;top:-95px}
 @media (min-width:700px){.flor.sm{height:210px}.flor.bl.sm,.flor.br.sm{bottom:-80px}.flor.tr.sm,.flor.tl.sm{top:-80px}}
 
@@ -80,104 +81,104 @@ p.body{font-size:1.08rem;line-height:1.85;color:var(--ink);font-weight:400}
 .seal{position:absolute;top:92px;left:50%;transform:translateX(-50%);width:58px;height:58px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--serif);font-style:italic;font-size:1.25rem;z-index:5;transition:opacity .3s;box-shadow:0 3px 8px rgba(0,0,0,.2);pointer-events:none}
 .envelope-wrapper.open .envelope-flap{transform:rotateX(180deg);z-index:1;filter:none}
 .envelope-wrapper.open .seal{opacity:0}
-.envelope-text{position:relative;z-index:2;color:var(--ink);font-family:var(--sans);font-size:.62rem;letter-spacing:.45em;margin-top:46px;text-transform:uppercase;animation:pulseText 3s infinite}
+.envelope-text{position:relative;z-index:2;color:var(--ink);font-family:var(--sans);font-size:.8rem;letter-spacing:.4em;margin-top:40px;text-transform:uppercase;animation:pulseText 3s infinite}
 @keyframes pulseText{0%,100%{opacity:.4}50%{opacity:1}}
 #audio-btn{position:fixed;bottom:22px;right:22px;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:50%;width:46px;height:46px;font-size:.95rem;cursor:pointer;z-index:9000;display:none;align-items:center;justify-content:center;transition:.3s}
 #audio-btn:hover{background:var(--ink);color:#fff}
 
 /* ---------- contenido ---------- */
 #invitation-content{visibility:hidden;opacity:0;transition:opacity 1.6s}
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center}
 .hero .names{display:flex;flex-direction:column;align-items:center;line-height:1.05;margin:6px 0 18px}
-.hero .name{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,11vw,4rem);letter-spacing:.28em;padding-left:.28em;color:var(--ink)}
-.hero .amp{font-family:var(--serif);font-style:italic;font-weight:300;font-size:2.2rem;color:var(--lav);margin:6px 0}
-.fullnames{font-family:var(--sans);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;line-height:2.2;color:var(--soft)}
-.hero .script{margin-top:34px}
+.hero .name{font-family:var(--serif);font-weight:300;font-size:clamp(3rem,13vw,4.6rem);letter-spacing:.22em;padding-left:.22em;color:var(--ink)}
+.hero .amp{font-family:var(--serif);font-style:italic;font-weight:300;font-size:2.6rem;color:var(--lav);margin:6px 0}
+.fullnames{font-family:var(--sans);font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;line-height:2;color:var(--soft)}
+.hero .script{margin-top:22px}
 
-.photo{width:100%;display:block;margin:34px 0;cursor:zoom-in;padding:10px;background:#fff;border:1px solid var(--line);box-shadow:0 10px 30px rgba(70,55,110,.08)}
+.photo{width:100%;display:block;margin:24px 0;cursor:zoom-in;padding:10px;background:#fff;border:1px solid var(--line);box-shadow:0 10px 30px rgba(70,55,110,.08)}
 .photo img{display:block;width:100%;object-fit:cover}
-.pair{display:flex;gap:12px;margin:30px 0}
+.pair{display:flex;gap:10px;margin:20px 0}
 .pair .photo{margin:0;padding:6px}
-.gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:30px 0}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0}
 .gallery .photo{margin:0;padding:6px}
 
-.parents h4{font-family:var(--sans);font-weight:500;font-size:.58rem;letter-spacing:.36em;text-transform:uppercase;color:var(--sage);margin:26px 0 8px}
-.parents p{font-style:italic;font-size:1.2rem;line-height:1.6}
+.parents h4{font-family:var(--sans);font-weight:500;font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--sage);margin:20px 0 6px}
+.parents p{font-style:italic;font-size:1.4rem;line-height:1.5}
 
-.bigdate{font-family:var(--serif);font-weight:300;font-size:clamp(2rem,9vw,3rem);letter-spacing:.2em;padding-left:.2em;margin:4px 0 10px;white-space:nowrap}
-.calendar{width:100%;max-width:330px;margin:34px auto;font-family:var(--sans);font-size:.78rem;font-weight:300}
-.cal-month{letter-spacing:.4em;text-transform:uppercase;margin-bottom:16px;font-weight:400}
+.bigdate{font-family:var(--serif);font-weight:300;font-size:clamp(2.3rem,10.5vw,3.4rem);letter-spacing:.14em;padding-left:.14em;margin:2px 0 6px;white-space:nowrap}
+.calendar{width:100%;max-width:360px;margin:22px auto;font-family:var(--sans);font-size:.95rem;font-weight:300}
+.cal-month{letter-spacing:.32em;text-transform:uppercase;margin-bottom:12px;font-weight:400}
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
-.cal-head{color:var(--sage);font-size:.6rem;letter-spacing:.1em;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--line)}
-.cal-day{padding:9px 0}
+.cal-head{color:var(--sage);font-size:.72rem;letter-spacing:.1em;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.cal-day{padding:7px 0}
 .cal-day.hl{border:1px solid var(--lav);border-radius:50%;color:var(--ink);background:var(--lav-p);font-weight:500}
-.calendar{background:var(--lav-pp);border:1px solid var(--lav-p);padding:22px 18px}
-.timer{margin:38px 0 10px;padding:26px 0;border-top:1px solid var(--lav-p);border-bottom:1px solid var(--lav-p);background:var(--lav-pp)}
+.calendar{background:var(--lav-pp);border:1px solid var(--lav-p);padding:18px 14px}
+.timer{margin:22px 0 6px;padding:18px 0;border-top:1px solid var(--lav-p);border-bottom:1px solid var(--lav-p);background:var(--lav-pp)}
 #countdown-timer{display:flex;justify-content:center;gap:clamp(14px,5vw,34px)}
-#countdown-timer span{display:flex;flex-direction:column;align-items:center;font-family:var(--sans);font-size:.55rem;letter-spacing:.3em;color:var(--soft)}
-#countdown-timer b{font-family:var(--serif);font-weight:300;font-size:2.3rem;color:var(--ink);margin-bottom:6px;letter-spacing:.04em}
+#countdown-timer span{display:flex;flex-direction:column;align-items:center;font-family:var(--sans);font-size:.7rem;letter-spacing:.24em;color:var(--soft)}
+#countdown-timer b{font-family:var(--serif);font-weight:300;font-size:2.8rem;color:var(--ink);margin-bottom:2px;letter-spacing:.04em}
 
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:transparent;color:var(--ink);padding:15px 28px;text-decoration:none;font-family:var(--sans);font-size:.62rem;letter-spacing:.3em;font-weight:400;text-transform:uppercase;margin-top:20px;border:1px solid var(--ink);cursor:pointer;transition:.4s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:transparent;color:var(--ink);padding:15px 24px;text-decoration:none;font-family:var(--sans);font-size:.76rem;letter-spacing:.22em;font-weight:400;text-transform:uppercase;margin-top:16px;border:1px solid var(--ink);cursor:pointer;transition:.4s}
 .btn:hover{background:var(--ink);color:#fff}
 .btn.block{width:100%}
 
-.venue{margin:10px 0 50px}
-.venue i.ic{font-size:1.15rem;color:var(--lav);margin-bottom:16px;width:56px;height:56px;line-height:56px;border-radius:50%;background:var(--lav-p);display:inline-block}
-.venue h3{font-family:var(--serif);font-weight:400;font-size:1.65rem;line-height:1.3;margin:4px 0 14px}
-.venue .hora{font-family:var(--sans);font-size:.78rem;letter-spacing:.4em;font-weight:400;margin-bottom:22px;color:var(--sage)}
-.venue .vimg{width:100%;height:210px;object-fit:cover;margin-bottom:22px;padding:6px;background:#fff;border:1px solid var(--line)}
+.venue{margin:0 0 30px}
+.venue i.ic{font-size:1.15rem;color:var(--lav);margin-bottom:10px;width:56px;height:56px;line-height:56px;border-radius:50%;background:var(--lav-p);display:inline-block}
+.venue h3{font-family:var(--serif);font-weight:400;font-size:2rem;line-height:1.2;margin:2px 0 8px}
+.venue .hora{font-family:var(--sans);font-size:.95rem;letter-spacing:.3em;font-weight:500;margin-bottom:14px;color:var(--sage)}
+.venue .vimg{width:100%;height:210px;object-fit:cover;margin-bottom:14px;padding:6px;background:#fff;border:1px solid var(--line)}
 .map{width:100%;height:200px;border:1px solid var(--line);padding:5px;background:#fff}
 .map iframe{width:100%;height:100%;border:0;filter:grayscale(.45) contrast(.95)}
 
-.timeline{margin:26px 0 20px}
-.tl-item{padding:16px 0;border-bottom:1px solid var(--lav-p)}
+.timeline{margin:10px 0 10px}
+.tl-item{padding:11px 0;border-bottom:1px solid var(--lav-p)}
 .tl-item:last-child{border-bottom:none}
-.tl-time{font-family:var(--sans);font-size:.62rem;letter-spacing:.38em;color:var(--lav);font-weight:500}
+.tl-time{font-family:var(--sans);font-size:.78rem;letter-spacing:.28em;color:var(--lav);font-weight:500}
 .tl-time::before{content:"";display:inline-block;width:5px;height:5px;background:var(--lav-p);border:1px solid var(--lav);transform:rotate(45deg);margin-right:12px;vertical-align:middle}
-.tl-event{font-style:italic;font-size:1.4rem;margin-top:4px;font-weight:300}
+.tl-event{font-style:italic;font-size:1.65rem;margin-top:2px;font-weight:400}
 
-.hotel{padding:22px 0;border-bottom:1px solid var(--lav-p)}
+.hotel{padding:14px 0;border-bottom:1px solid var(--lav-p)}
 .hotel:last-of-type{border-bottom:none}
-.hotel h4{font-weight:400;font-size:1.4rem}
-.hotel small{font-family:var(--sans);font-size:.6rem;letter-spacing:.2em;color:var(--soft);text-transform:uppercase}
-.hotel .btn{margin-top:12px;padding:11px 22px}
+.hotel h4{font-weight:400;font-size:1.65rem}
+.hotel small{font-family:var(--sans);font-size:.74rem;letter-spacing:.2em;color:var(--soft);text-transform:uppercase}
+.hotel .btn{margin-top:8px;padding:11px 22px}
 
-.dress{padding:70px 0 20px}
-.dress h2{font-weight:300;font-style:italic;font-size:3.2rem;letter-spacing:.06em;margin:4px 0 12px}
-.swatches{display:flex;justify-content:center;gap:22px;margin-top:22px;flex-wrap:wrap}
-.swatch{display:flex;flex-direction:column;align-items:center;gap:8px;font-family:var(--sans);font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:var(--soft)}
+.dress{padding:40px 0 0}
+.dress h2{font-weight:300;font-style:italic;font-size:3.6rem;letter-spacing:.04em;margin:0 0 6px}
+.swatches{display:flex;justify-content:center;gap:22px;margin-top:14px;flex-wrap:wrap}
+.swatch{display:flex;flex-direction:column;align-items:center;gap:8px;font-family:var(--sans);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}
 .swatch i{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);position:relative;display:block}
 .swatch i::after{content:"";position:absolute;left:50%;top:-5px;width:1px;height:42px;background:var(--ink);transform:translateX(-50%) rotate(45deg);opacity:.7}
 
-.qr{width:150px;height:150px;margin:26px auto 4px;display:block;padding:8px;background:#fff;border:1px solid var(--line)}
+.qr{width:160px;height:160px;margin:16px auto 4px;display:block;padding:8px;background:#fff;border:1px solid var(--line)}
 
-.card{background:var(--lav-pp);border:1px solid var(--lav-p);outline:1px solid var(--lav-p);outline-offset:-9px;padding:50px 34px;margin-top:34px;box-shadow:0 12px 34px rgba(70,55,110,.06)}
+.card{background:var(--lav-pp);border:1px solid var(--lav-p);outline:1px solid var(--lav-p);outline-offset:-9px;padding:34px 22px;margin-top:24px;box-shadow:0 12px 34px rgba(70,55,110,.06)}
 .photo{border-color:var(--lav-p)}
 .btn:hover{background:var(--lav);border-color:var(--lav)}
-.qr{border-color:var(--lav-p)}.card h2.title{font-size:1.6rem}
-.fg{margin-bottom:26px;text-align:left}
-.fg label{display:block;font-family:var(--sans);font-size:.58rem;letter-spacing:.3em;color:var(--soft);margin-bottom:6px;text-transform:uppercase}
-.fg input,.fg select,.fg textarea{width:100%;padding:10px 0;background:transparent;border:none;border-bottom:1px solid var(--line);font-family:var(--serif);font-size:1.2rem;color:var(--ink);outline:none;border-radius:0}
+.qr{border-color:var(--lav-p)}.card h2.title{font-size:clamp(1.6rem,6.6vw,2.1rem);letter-spacing:.12em}
+.fg{margin-bottom:18px;text-align:left}
+.fg label{display:block;font-family:var(--sans);font-size:.72rem;letter-spacing:.24em;color:var(--soft);margin-bottom:6px;text-transform:uppercase}
+.fg input,.fg select,.fg textarea{width:100%;padding:10px 0;background:transparent;border:none;border-bottom:1px solid var(--line);font-family:var(--serif);font-size:1.35rem;color:var(--ink);outline:none;border-radius:0}
 .fg input:focus,.fg select:focus,.fg textarea:focus{border-bottom-color:var(--lav)}
 .radio-ed{display:flex;gap:20px}
-.radio-ed label{display:flex;align-items:center;gap:8px;cursor:pointer;font-size:1.1rem;letter-spacing:0;text-transform:none;font-family:var(--serif);color:var(--ink);margin:0}
+.radio-ed label{display:flex;align-items:center;gap:8px;cursor:pointer;font-size:1.3rem;letter-spacing:0;text-transform:none;font-family:var(--serif);color:var(--ink);margin:0}
 .radio-ed input{accent-color:var(--lav);width:auto}
-#paseSection{padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:26px}
-.btn-send{width:100%;background:var(--ink);color:#fff;border:1px solid var(--ink);padding:16px;font-family:var(--sans);font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;cursor:pointer;display:flex;justify-content:center;align-items:center;gap:10px;transition:.4s}
+#paseSection{padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:18px}
+.btn-send{width:100%;background:var(--ink);color:#fff;border:1px solid var(--ink);padding:16px;font-family:var(--sans);font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;cursor:pointer;display:flex;justify-content:center;align-items:center;gap:10px;transition:.4s}
 .btn-send:hover{background:transparent;color:var(--ink)}
 .btn-send:disabled{opacity:.5;cursor:wait}
-.ok-msg{display:none;padding:20px;margin-top:22px;border:1px solid var(--sage);color:var(--ink);font-size:1.08rem;line-height:1.6;font-style:italic}
-.deadline{font-family:var(--sans);font-size:.58rem;letter-spacing:.32em;margin-top:26px;color:var(--soft)}
+.ok-msg{display:none;padding:18px;margin-top:16px;border:1px solid var(--sage);color:var(--ink);font-size:1.25rem;line-height:1.6;font-style:italic}
+.deadline{font-family:var(--sans);font-size:.74rem;letter-spacing:.24em;margin-top:18px;color:var(--soft)}
 
 #lightbox{position:fixed;inset:0;background:rgba(30,25,45,.94);z-index:10000;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s}
 #lightbox.active{opacity:1;visibility:visible}
 #lightbox img{max-width:95%;max-height:90vh}
 .lightbox-close{position:absolute;top:22px;right:26px;color:#fff;font-size:2.4rem;cursor:pointer;background:none;border:none;font-weight:200}
 
-footer{text-align:center;padding:50px 20px 60px}
-footer p{font-family:var(--sans);font-size:.55rem;letter-spacing:.5em;color:var(--soft);text-transform:uppercase}
+footer{text-align:center;padding:24px 20px 40px}
+footer p{font-family:var(--sans);font-size:.68rem;letter-spacing:.4em;color:var(--soft);text-transform:uppercase}
 
-@media (min-width:900px){.sec{padding:130px 40px}}
+@media (min-width:900px){.sec{padding:80px 40px}.sec:has(> .flor.sm){padding-top:120px;padding-bottom:120px}}
 </style>
 </head>
 <body>
@@ -222,15 +223,15 @@ footer p{font-family:var(--sans);font-size:.55rem;letter-spacing:.5em;color:var(
 <section class="sec">
   <div class="photo anim-el fade-in-up" onclick="openLightbox(this.querySelector('img').src)"><img src="assets/1.jpg" alt="Carmen y Gabriel" onerror="this.parentNode.style.display='none'"></div>
 
-  <p class="script anim-el fade-in-up" style="font-size:1.35rem">"Con mucha ilusión queremos compartir contigo uno de los días más importantes de nuestras vidas. Después de tantos momentos compartidos, ha llegado el momento de celebrar nuestro amor y comenzar un nuevo capítulo juntos.<br><br>Será un honor contar con tu presencia y celebrar este día tan especial a nuestro lado."</p>
+  <p class="script anim-el fade-in-up" style="font-size:1.5rem">"Con mucha ilusión queremos compartir contigo uno de los días más importantes de nuestras vidas. Después de tantos momentos compartidos, ha llegado el momento de celebrar nuestro amor y comenzar un nuevo capítulo juntos.<br><br>Será un honor contar con tu presencia y celebrar este día tan especial a nuestro lado."</p>
 
   <span class="sprig anim-el fade-in-up"></span>
 
   <div class="parents anim-el fade-in-up">
-    <p class="script" style="font-size:1.5rem;color:var(--lav)">con la bendición de nuestros padres</p>
+    <p class="script" style="font-size:1.7rem;color:var(--lav)">con la bendición de nuestros padres</p>
     <h4>Padres de la novia</h4><p>Eyra Alamina Hernández<br>Marco Antonio Porras Reyes <span title="In memoriam">†</span></p>
     <h4>Madre del novio</h4><p>Beatriz Rico Guerrero</p>
-    <h4 style="margin-top:38px">Padrinos de velación</h4><p>Carmita Alamina Hernández<br>Juan Carlos Sánchez Gheno</p>
+    <h4 style="margin-top:26px">Padrinos de velación</h4><p>Carmita Alamina Hernández<br>Juan Carlos Sánchez Gheno</p>
   </div>
 </section>
 
@@ -251,14 +252,14 @@ footer p{font-family:var(--sans);font-size:.55rem;letter-spacing:.5em;color:var(
   </div>
 
   <div class="timer anim-el fade-in-up">
-    <p class="script" style="margin-bottom:14px">faltan</p>
+    <p class="script" style="margin-bottom:8px">faltan</p>
     <div id="countdown-timer">
       <span><b id="dias">00</b>DÍAS</span><span><b id="horas">00</b>HRS</span><span><b id="minutos">00</b>MIN</span><span><b id="segundos">00</b>SEG</span>
     </div>
   </div>
   <button onclick="downloadICS()" class="btn anim-el fade-in-up"><i class="fa-regular fa-calendar-plus"></i> Agregar al calendario</button>
 
-  <div class="photo anim-el fade-in-up" style="margin-top:50px" onclick="openLightbox(this.querySelector('img').src)"><img src="assets/2.jpg" alt="Novios" onerror="this.parentNode.style.display='none'"></div>
+  <div class="photo anim-el fade-in-up" style="margin-top:28px" onclick="openLightbox(this.querySelector('img').src)"><img src="assets/2.jpg" alt="Novios" onerror="this.parentNode.style.display='none'"></div>
 </section>
 
 <!-- ============ UBICACIONES ============ -->
@@ -281,7 +282,7 @@ footer p{font-family:var(--sans);font-size:.55rem;letter-spacing:.5em;color:var(
     <div class="photo anim-el fade-in-up" style="flex:1" onclick="openLightbox(this.querySelector('img').src)"><img src="assets/4.jpg" style="height:180px" alt="" onerror="this.parentNode.style.display='none'"></div>
   </div>
 
-  <div class="venue anim-el fade-in-up" style="margin-top:60px">
+  <div class="venue anim-el fade-in-up" style="margin-top:36px">
     <i class="fa-solid fa-champagne-glasses ic"></i>
     <p class="eyebrow sage">Recepción</p>
     <h3>Hacienda El Jagüey</h3>
@@ -301,9 +302,9 @@ footer p{font-family:var(--sans);font-size:.55rem;letter-spacing:.5em;color:var(
 
   <div class="photo anim-el fade-in-up" onclick="openLightbox(this.querySelector('img').src)"><img src="assets/5.jpg" alt="" onerror="this.parentNode.style.display='none'"></div>
 
-  <h2 class="title anim-el fade-in-up" style="margin-top:80px">Hospedaje</h2>
+  <h2 class="title anim-el fade-in-up" style="margin-top:52px">Hospedaje</h2>
   <span class="sprig anim-el fade-in-up"></span>
-  <p class="body anim-el fade-in-up" style="margin-bottom:20px">Para tu comodidad, sugerimos las siguientes opciones en Puebla:</p>
+  <p class="body anim-el fade-in-up" style="margin-bottom:8px">Para tu comodidad, sugerimos las siguientes opciones en Puebla:</p>
   <div class="hotel anim-el fade-in-up"><h4>Hampton by Hilton</h4><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Hampton+by+Hilton+Puebla+Angelopolis">Ver en mapa</a></div>
   <div class="hotel anim-el fade-in-up"><h4>La Quinta by Wyndham</h4><small>Puebla Palmas Angelópolis</small><br><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=La+Quinta+by+Wyndham+Puebla+Palmas+Angelopolis">Ver en mapa</a></div>
   <div class="hotel anim-el fade-in-up"><h4>Wyndham Puebla Angelópolis</h4><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Wyndham+Puebla+Angelopolis">Ver en mapa</a></div>
@@ -325,13 +326,13 @@ footer p{font-family:var(--sans);font-size:.55rem;letter-spacing:.5em;color:var(
     <p class="eyebrow">Código de vestimenta</p>
     <h2>Formal</h2>
     <p class="script">Hombres con traje o smoking.<br>Mujeres con vestido largo.</p>
-    <p class="eyebrow" style="margin-top:34px;font-size:.55rem;color:var(--soft)">Colores reservados para la novia</p>
+    <p class="eyebrow" style="margin-top:22px;font-size:.72rem;color:var(--soft)">Colores reservados para la novia</p>
     <div class="swatches">
       <div class="swatch"><i style="background:#fff"></i>Blanco</div>
       <div class="swatch"><i style="background:#E8DCC8"></i>Beige</div>
       <div class="swatch"><i style="background:#EFE9E1"></i>Perla</div>
     </div>
-    <p class="script" style="font-size:1.05rem;margin-top:30px">Nuestra paleta: lavanda, verde y blanco.</p>
+    <p class="script" style="font-size:1.3rem;margin-top:20px">Nuestra paleta: lavanda, verde y blanco.</p>
   </div>
 </section>
 
@@ -346,13 +347,13 @@ footer p{font-family:var(--sans);font-size:.55rem;letter-spacing:.5em;color:var(
     <div class="btn block" style="cursor:default;border-color:var(--line);color:var(--soft)"><i class="fa-regular fa-envelope"></i> Lluvia de sobres en el evento</div>
   </div>
 
-  <h2 class="title anim-el fade-in-up" style="margin-top:90px">Playlist</h2>
+  <h2 class="title anim-el fade-in-up" style="margin-top:56px">Playlist</h2>
   <span class="sprig anim-el fade-in-up"></span>
-  <p class="body anim-el fade-in-up" style="margin-bottom:22px">Ayúdanos a armar la pista: agrega las canciones que no pueden faltar.</p>
+  <p class="body anim-el fade-in-up" style="margin-bottom:14px">Ayúdanos a armar la pista: agrega las canciones que no pueden faltar.</p>
   <iframe class="anim-el fade-in-up" style="border-radius:4px;border:0" src="https://open.spotify.com/embed/playlist/2b7laDPupRuZm1H5JfvyOk?utm_source=generator" width="100%" height="352" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Playlist Spotify"></iframe>
   <a href="https://open.spotify.com/playlist/2b7laDPupRuZm1H5JfvyOk?si=1c8216d00b41456c&pt=ef24b88d3e5ac9768ffb8881e8faf080" target="_blank" rel="noopener" class="btn block anim-el fade-in-up"><i class="fa-brands fa-spotify"></i> Agregar canciones</a>
 
-  <h2 class="title anim-el fade-in-up" style="margin-top:90px">Galería en vivo</h2>
+  <h2 class="title anim-el fade-in-up" style="margin-top:56px">Galería en vivo</h2>
   <span class="sprig anim-el fade-in-up"></span>
   <p class="body anim-el fade-in-up">¡Queremos ver la boda a través de tus ojos! Escanea para compartir tus fotos y videos.</p>
   <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fdrive.google.com%2Fdrive%2Ffolders%2F1SyZkq9Xnu8i3G8nfuLLWVHrQGSYOPgSK%3Fusp%3Dsharing" alt="QR Galería" class="qr anim-el scale-in">
@@ -360,16 +361,16 @@ footer p{font-family:var(--sans);font-size:.55rem;letter-spacing:.5em;color:var(
 </section>
 
 <!-- ============ RSVP + FIRMAS ============ -->
-<section class="sec" style="padding-top:130px">
+<section class="sec">
   <img class="flor tr sm" src="assets/flor-der.png" alt="" onerror="this.remove()">
   <div class="card anim-el fade-in-up">
     <h2 class="title">R.S.V.P.</h2>
-    <p class="eyebrow sage" style="margin-top:12px;margin-bottom:34px">Confirmación de asistencia</p>
+    <p class="eyebrow sage" style="margin-top:10px;margin-bottom:22px">Confirmación de asistencia</p>
     <div id="paseSection" style="display:none">
       <p class="eyebrow sage" style="margin-bottom:8px">Pase personal</p>
-      <h2 id="guestNameDisplay" style="font-weight:300;font-size:1.9rem;margin:5px 0">Invitado</h2>
-      <p style="font-size:1.2rem">Lugares reservados: <span id="guestPassesDisplay" style="color:var(--lav);font-size:1.5rem"></span></p>
-      <p class="script" style="font-size:1rem;margin-top:14px">Queremos compartir este día tan especial con las personas que amamos. Por ello, los lugares han sido reservados especialmente para cada invitado.<br><span style="font-size:.85rem">(Los boletos son únicos e intransferibles, agradecemos su comprensión.)</span></p>
+      <h2 id="guestNameDisplay" style="font-weight:400;font-size:2.2rem;margin:5px 0">Invitado</h2>
+      <p style="font-size:1.35rem">Lugares reservados: <span id="guestPassesDisplay" style="color:var(--lav);font-size:1.5rem"></span></p>
+      <p class="script" style="font-size:1.2rem;margin-top:10px">Queremos compartir este día tan especial con las personas que amamos. Por ello, los lugares han sido reservados especialmente para cada invitado.<br><span style="font-size:1rem">(Los boletos son únicos e intransferibles, agradecemos su comprensión.)</span></p>
     </div>
     <form id="rsvpForm" onsubmit="return false">
       <div id="genericRSVPInputs">
@@ -391,8 +392,8 @@ footer p{font-family:var(--sans);font-size:.55rem;letter-spacing:.5em;color:var(
   </div>
 
   <div class="card anim-el fade-in-up">
-    <h2 class="title" style="font-size:1.45rem">Libro de firmas</h2>
-    <p class="script" style="margin:14px 0 30px;font-size:1.1rem">Nos encantaría atesorar tus palabras. Déjanos un mensaje para recordar este día por siempre.</p>
+    <h2 class="title">Libro de firmas</h2>
+    <p class="script" style="margin:10px 0 20px;font-size:1.35rem">Nos encantaría atesorar tus palabras. Déjanos un mensaje para recordar este día por siempre.</p>
     <form id="wishesForm" onsubmit="return false">
       <div class="fg"><label for="wishName">Tu nombre</label><input type="text" id="wishName" placeholder="¿Quién nos escribe?"></div>
       <div class="fg"><textarea id="wishesText" rows="3" placeholder="Con cariño para Carmen y Gabriel..."></textarea></div>
@@ -469,9 +470,9 @@ document.addEventListener("DOMContentLoaded",()=>{
     document.getElementById('guestPassesDisplay').textContent=pases;
   }
   if(nombres){
-    let h='<label style="font-family:var(--sans);font-size:.58rem;color:var(--soft);margin-bottom:15px;display:block;letter-spacing:.3em">SELECCIONA QUIÉNES ASISTEN:</label>';
+    let h='<label style="font-family:var(--sans);font-size:.72rem;color:var(--soft);margin-bottom:12px;display:block;letter-spacing:.24em">SELECCIONA QUIÉNES ASISTEN:</label>';
     nombres.split(',').forEach((n,i)=>{
-      h+=`<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:15px;padding-bottom:15px;border-bottom:1px solid var(--line)"><span class="rsvp-name-ext" style="flex:1;min-width:120px;font-size:1.15rem">${n.trim().replace(/</g,'&lt;')}</span><div class="radio-ed"><label><input type="radio" name="asistencia_${i}" value="Sí"> Sí</label><label><input type="radio" name="asistencia_${i}" value="No"> No</label></div></div>`;
+      h+=`<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--line)"><span class="rsvp-name-ext" style="flex:1;min-width:120px;font-size:1.35rem">${n.trim().replace(/</g,'&lt;')}</span><div class="radio-ed"><label><input type="radio" name="asistencia_${i}" value="Sí"> Sí</label><label><input type="radio" name="asistencia_${i}" value="No"> No</label></div></div>`;
     });
     document.getElementById('dynamicGuestList').innerHTML=h;
     document.getElementById('genericRSVPInputs').style.display='none';

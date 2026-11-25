@@ -16,6 +16,8 @@
   --lav:#8E7FB5;       /* lavanda */
   --sage:#7C8D6C;      /* verde salvia */
   --line:#D9D3E6;      /* líneas finas */
+  --lav-p:#E7E0F4;     /* lavanda pastel */
+  --lav-pp:#F4F1FA;    /* lavanda casi blanco */
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'Jost',sans-serif;
 }
@@ -23,6 +25,14 @@
 html{font-size:18px}
 body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 img{max-width:100%}
+
+/* ---------- textura de papel de invitación (sobre todo el cuerpo) ---------- */
+body{background-color:var(--bg)}
+body::after{content:"";position:fixed;inset:0;z-index:20000;pointer-events:none;mix-blend-mode:multiply;opacity:.55;
+  background-image:
+   url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n' x='0' y='0' width='100%25' height='100%25'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' seed='4' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .45  0 0 0 0 .42  0 0 0 0 .52  0 0 0 .22 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"),
+   url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600'><filter id='f' x='0' y='0' width='100%25' height='100%25'><feTurbulence type='fractalNoise' baseFrequency='.012 .5' numOctaves='2' seed='9' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .55  0 0 0 0 .5  0 0 0 0 .62  0 0 0 .12 0'/></filter><rect width='100%25' height='100%25' filter='url(%23f)'/></svg>");
+}
 
 /* ---------- animaciones suaves ---------- */
 .anim-el{opacity:0}
@@ -37,8 +47,9 @@ img{max-width:100%}
 h2.title{font-family:var(--serif);font-weight:300;font-size:2.1rem;letter-spacing:.34em;text-transform:uppercase;color:var(--ink);margin-bottom:6px;padding-left:.34em}
 .script{font-family:var(--serif);font-style:italic;font-weight:300;color:var(--soft);font-size:1.25rem;line-height:1.7}
 p.body{font-size:1.08rem;line-height:1.85;color:var(--ink);font-weight:400}
-.sprig{display:block;width:70px;height:1px;background:var(--lav);margin:30px auto;opacity:.6;position:relative}
-.sprig::after{content:"";position:absolute;left:50%;top:-3px;width:7px;height:7px;border:1px solid var(--lav);background:var(--bg);transform:translateX(-50%) rotate(45deg)}
+.sprig{display:block;width:90px;height:1px;background:var(--lav);margin:30px auto;opacity:.75;position:relative}
+.sprig::after{content:"";position:absolute;left:50%;top:-4px;width:9px;height:9px;border:1px solid var(--lav);background:var(--lav-p);transform:translateX(-50%) rotate(45deg)}
+.sprig::before{content:"";position:absolute;left:-14px;right:-14px;top:-1px;height:3px;border-top:1px solid var(--lav-p);border-bottom:1px solid var(--lav-p);opacity:.9}
 
 /* ---------- flores (tus PNG) ---------- */
 .sec{position:relative;max-width:620px;margin:0 auto;padding:90px 34px;text-align:center;overflow:hidden}
@@ -48,7 +59,12 @@ p.body{font-size:1.08rem;line-height:1.85;color:var(--ink);font-weight:400}
 .flor.tr{right:-14%;top:-3%;width:62%;transform:scale(-1,-1)}
 .flor.tl{left:-18%;top:-3%;width:46%;transform:scaleY(-1)}
 .flor.br{right:-18%;bottom:-3%;width:46%;transform:scaleX(-1)}
-.flor.sm{width:34%;opacity:.9}
+.flor.sm{width:60%;opacity:1}
+.flor.bl.sm{left:-18%;bottom:-2%}
+.flor.tr.sm{right:-18%;top:-2%}
+.flor.tl.sm{left:-20%;top:-2%}
+.flor.br.sm{right:-20%;bottom:-2%}
+@media (min-width:700px){.flor.sm{width:52%}}
 
 /* ---------- sobre ---------- */
 #envelope-screen{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 1.2s,visibility 1.2s;overflow:hidden}
@@ -91,8 +107,9 @@ p.body{font-size:1.08rem;line-height:1.85;color:var(--ink);font-weight:400}
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
 .cal-head{color:var(--sage);font-size:.6rem;letter-spacing:.1em;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--line)}
 .cal-day{padding:9px 0}
-.cal-day.hl{border:1px solid var(--lav);border-radius:50%;color:var(--lav);font-weight:500}
-.timer{margin:38px 0 10px;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cal-day.hl{border:1px solid var(--lav);border-radius:50%;color:var(--ink);background:var(--lav-p);font-weight:500}
+.calendar{background:var(--lav-pp);border:1px solid var(--lav-p);padding:22px 18px}
+.timer{margin:38px 0 10px;padding:26px 0;border-top:1px solid var(--lav-p);border-bottom:1px solid var(--lav-p);background:var(--lav-pp)}
 #countdown-timer{display:flex;justify-content:center;gap:clamp(14px,5vw,34px)}
 #countdown-timer span{display:flex;flex-direction:column;align-items:center;font-family:var(--sans);font-size:.55rem;letter-spacing:.3em;color:var(--soft)}
 #countdown-timer b{font-family:var(--serif);font-weight:300;font-size:2.3rem;color:var(--ink);margin-bottom:6px;letter-spacing:.04em}
@@ -102,7 +119,7 @@ p.body{font-size:1.08rem;line-height:1.85;color:var(--ink);font-weight:400}
 .btn.block{width:100%}
 
 .venue{margin:10px 0 50px}
-.venue i.ic{font-size:1.3rem;color:var(--lav);margin-bottom:14px}
+.venue i.ic{font-size:1.15rem;color:var(--lav);margin-bottom:16px;width:56px;height:56px;line-height:56px;border-radius:50%;background:var(--lav-p);display:inline-block}
 .venue h3{font-family:var(--serif);font-weight:400;font-size:1.65rem;line-height:1.3;margin:4px 0 14px}
 .venue .hora{font-family:var(--sans);font-size:.78rem;letter-spacing:.4em;font-weight:400;margin-bottom:22px;color:var(--sage)}
 .venue .vimg{width:100%;height:210px;object-fit:cover;margin-bottom:22px;padding:6px;background:#fff;border:1px solid var(--line)}
@@ -110,12 +127,13 @@ p.body{font-size:1.08rem;line-height:1.85;color:var(--ink);font-weight:400}
 .map iframe{width:100%;height:100%;border:0;filter:grayscale(.45) contrast(.95)}
 
 .timeline{margin:26px 0 20px}
-.tl-item{padding:16px 0;border-bottom:1px solid var(--line)}
+.tl-item{padding:16px 0;border-bottom:1px solid var(--lav-p)}
 .tl-item:last-child{border-bottom:none}
-.tl-time{font-family:var(--sans);font-size:.62rem;letter-spacing:.38em;color:var(--sage);font-weight:500}
+.tl-time{font-family:var(--sans);font-size:.62rem;letter-spacing:.38em;color:var(--lav);font-weight:500}
+.tl-time::before{content:"";display:inline-block;width:5px;height:5px;background:var(--lav-p);border:1px solid var(--lav);transform:rotate(45deg);margin-right:12px;vertical-align:middle}
 .tl-event{font-style:italic;font-size:1.4rem;margin-top:4px;font-weight:300}
 
-.hotel{padding:22px 0;border-bottom:1px solid var(--line)}
+.hotel{padding:22px 0;border-bottom:1px solid var(--lav-p)}
 .hotel:last-of-type{border-bottom:none}
 .hotel h4{font-weight:400;font-size:1.4rem}
 .hotel small{font-family:var(--sans);font-size:.6rem;letter-spacing:.2em;color:var(--soft);text-transform:uppercase}
@@ -130,8 +148,10 @@ p.body{font-size:1.08rem;line-height:1.85;color:var(--ink);font-weight:400}
 
 .qr{width:150px;height:150px;margin:26px auto 4px;display:block;padding:8px;background:#fff;border:1px solid var(--line)}
 
-.card{background:#fff;border:1px solid var(--line);padding:46px 30px;margin-top:34px;box-shadow:0 12px 34px rgba(70,55,110,.07)}
-.card h2.title{font-size:1.6rem}
+.card{background:var(--lav-pp);border:1px solid var(--lav-p);outline:1px solid var(--lav-p);outline-offset:-9px;padding:50px 34px;margin-top:34px;box-shadow:0 12px 34px rgba(70,55,110,.06)}
+.photo{border-color:var(--lav-p)}
+.btn:hover{background:var(--lav);border-color:var(--lav)}
+.qr{border-color:var(--lav-p)}.card h2.title{font-size:1.6rem}
 .fg{margin-bottom:26px;text-align:left}
 .fg label{display:block;font-family:var(--sans);font-size:.58rem;letter-spacing:.3em;color:var(--soft);margin-bottom:6px;text-transform:uppercase}
 .fg input,.fg select,.fg textarea{width:100%;padding:10px 0;background:transparent;border:none;border-bottom:1px solid var(--line);font-family:var(--serif);font-size:1.2rem;color:var(--ink);outline:none;border-radius:0}
@@ -385,7 +405,7 @@ footer p{font-family:var(--sans);font-size:.55rem;letter-spacing:.5em;color:var(
 <script>
 /* ===== CONFIGURACIÓN ===== */
 // Pega aquí la URL de la implementación web de Apps Script (termina en /exec)
-const SCRIPT_URL = "PEGAR_URL_DE_APPS_SCRIPT_AQUI";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzCMigIZJXMMasLL5jowe10B7JxlV-I_cZblr0RTEJp7lGegfEcIzdzUHVznewOVi6WYg/exec";
 const WA_NOVIA = "522221922266";
 const WA_NOVIO = "524498979197";
 const FECHA_BODA = new Date("2027-03-20T16:00:00-06:00");

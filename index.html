@@ -28,6 +28,12 @@ img{max-width:100%}
 
 /* ---------- textura de papel de invitación (sobre todo el cuerpo) ---------- */
 body{background-color:var(--bg)}
+/* fondo fotográfico sutil (assets/fondo.jpg) con velo marfil encima */
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+   linear-gradient(rgba(248,247,250,.72),rgba(248,247,250,.72)),
+   url("assets/fondo.jpg") center/cover no-repeat;
+}
 body::after{content:"";position:fixed;inset:0;z-index:20000;pointer-events:none;mix-blend-mode:multiply;opacity:.55;
   background-image:
    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n' x='0' y='0' width='100%25' height='100%25'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' seed='4' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .45  0 0 0 0 .42  0 0 0 0 .52  0 0 0 .22 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"),
@@ -142,6 +148,8 @@ p.body{font-size:1.25rem;line-height:1.7;color:var(--ink);font-weight:400}
 .hotel h4{font-weight:400;font-size:1.65rem}
 .hotel small{font-family:var(--sans);font-size:.74rem;letter-spacing:.2em;color:var(--soft);text-transform:uppercase}
 .hotel .btn{margin-top:8px;padding:11px 22px}
+.promo{margin-top:22px;padding:20px 16px;background:var(--lav-pp);border:1px dashed var(--lav)}
+.promo-code{font-family:var(--serif);font-size:1.7rem;letter-spacing:.06em;color:var(--ink);margin-bottom:4px}
 
 .dress{padding:40px 0 0}
 .dress h2{font-weight:300;font-style:italic;font-size:3.6rem;letter-spacing:.04em;margin:0 0 6px}
@@ -215,7 +223,6 @@ footer p{font-family:var(--sans);font-size:.68rem;letter-spacing:.4em;color:var(
   <div class="names anim-el scale-in" style="transition-delay:.2s">
     <span class="name">CARMEN</span><span class="amp">&amp;</span><span class="name">GABRIEL</span>
   </div>
-  <p class="fullnames anim-el fade-in-up">Carmen María Porras Reyes Alamina<br>Gabriel Eduardo Ruiz Rico</p>
   <p class="script anim-el fade-in-up">para celebrar nuestro amor</p>
 </section>
 
@@ -228,6 +235,7 @@ footer p{font-family:var(--sans);font-size:.68rem;letter-spacing:.4em;color:var(
   <span class="sprig anim-el fade-in-up"></span>
 
   <div class="parents anim-el fade-in-up">
+    <p class="fullnames" style="margin-bottom:22px">Carmen María Porras Reyes Alamina<br>Gabriel Eduardo Ruiz Rico</p>
     <p class="script" style="font-size:1.7rem;color:var(--lav)">con la bendición de nuestros padres</p>
     <h4>Padres de la novia</h4><p>Eyra Alamina Hernández<br>Marco Antonio Porras Reyes <span title="In memoriam">†</span></p>
     <h4>Madre del novio</h4><p>Beatriz Rico Guerrero</p>
@@ -308,6 +316,11 @@ footer p{font-family:var(--sans);font-size:.68rem;letter-spacing:.4em;color:var(
   <div class="hotel anim-el fade-in-up"><h4>Hampton by Hilton</h4><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Hampton+by+Hilton+Puebla+Angelopolis">Ver en mapa</a></div>
   <div class="hotel anim-el fade-in-up"><h4>La Quinta by Wyndham</h4><small>Puebla Palmas Angelópolis</small><br><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=La+Quinta+by+Wyndham+Puebla+Palmas+Angelopolis">Ver en mapa</a></div>
   <div class="hotel anim-el fade-in-up"><h4>Wyndham Puebla Angelópolis</h4><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Wyndham+Puebla+Angelopolis">Ver en mapa</a></div>
+  <div class="promo anim-el fade-in-up">
+    <p class="eyebrow sage" style="margin-bottom:8px">Código de descuento</p>
+    <p class="promo-code">Boda Carmen&amp;Gabriel</p>
+    <p class="script" style="font-size:1.15rem">Menciónalo al hacer tu reservación.</p>
+  </div>
 </section>
 
 <!-- ============ HISTORIA + VESTIMENTA ============ -->
@@ -332,7 +345,6 @@ footer p{font-family:var(--sans);font-size:.68rem;letter-spacing:.4em;color:var(
       <div class="swatch"><i style="background:#E8DCC8"></i>Beige</div>
       <div class="swatch"><i style="background:#EFE9E1"></i>Perla</div>
     </div>
-    <p class="script" style="font-size:1.3rem;margin-top:20px">Nuestra paleta: lavanda, verde y blanco.</p>
   </div>
 </section>
 
